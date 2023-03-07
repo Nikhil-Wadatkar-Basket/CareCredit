@@ -1,5 +1,6 @@
 package com.bs.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,11 +11,13 @@ public class Hospital {
 	@Id
 	private Integer hospId;
 	private String hospType;
+	@Column(unique = true,nullable = false)
 	private String hospName;
+	@Column(nullable = false)
 	private String hospCity;
 
 	public Hospital() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Hospital(Integer hospId, String hospType, String hospName, String hospCity) {
