@@ -19,10 +19,7 @@ public class HospitalService {
 	}
 
 	public Hospital createHospital(Hospital countries) {
-		if (countries.getHospType().equals("HQ") || countries.getHospType().equals("SA"))
-			countries.setHospId(Utility.createRandomID());
-		else
-			countries.setChilHospId(Utility.createRandomID());
+		countries.setHospId(Utility.createRandomID());
 		return hopsitalRepo.save(countries);
 	}
 

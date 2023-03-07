@@ -9,7 +9,6 @@ import javax.persistence.Table;
 public class Hospital {
 	@Id
 	private Integer hospId;
-	private Integer chilHospId;
 	private String hospType;
 	private String hospName;
 	private String hospCity;
@@ -18,10 +17,9 @@ public class Hospital {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Hospital(Integer hospId, Integer chilHospId, String hospType, String hospName, String hospCity) {
+	public Hospital(Integer hospId, String hospType, String hospName, String hospCity) {
 		super();
 		this.hospId = hospId;
-		this.chilHospId = chilHospId;
 		this.hospType = hospType;
 		this.hospName = hospName;
 		this.hospCity = hospCity;
@@ -33,14 +31,6 @@ public class Hospital {
 
 	public void setHospId(Integer hospId) {
 		this.hospId = hospId;
-	}
-
-	public Integer getChilHospId() {
-		return chilHospId;
-	}
-
-	public void setChilHospId(Integer chilHospId) {
-		this.chilHospId = chilHospId;
 	}
 
 	public String getHospType() {
@@ -69,8 +59,8 @@ public class Hospital {
 
 	@Override
 	public String toString() {
-		return "Hospital [hospId=" + hospId + ", chilHospId=" + chilHospId + ", hospType=" + hospType + ", hospName="
-				+ hospName + ", hospCity=" + hospCity + "]";
+		return "Hospital [hospId=" + hospId + ", hospType=" + hospType + ", hospName=" + hospName + ", hospCity="
+				+ hospCity + "]";
 	}
 
 }

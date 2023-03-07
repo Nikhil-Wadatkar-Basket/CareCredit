@@ -21,7 +21,8 @@ public class HospitalController {
 
 	@GetMapping("/gett")
 	public Hospital gett() {
-		return new Hospital(null, null, null, null, null);
+
+		return new Hospital();
 	}
 
 	@GetMapping("/getAll")
@@ -48,5 +49,4 @@ public class HospitalController {
 	public ResponseEntity<String> deleteByID(@PathVariable("id") Integer id) {
 		return new ResponseEntity<String>(hospitalService.deleteHospitalByID(id), HttpStatus.OK);
 	}
-
 }
