@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import HeaderComponent from "./Components/HeaderFooter/HeaderComponent";
+import FooterComponent from "./Components/HeaderFooter/FooterComponent";
+import Dashboard from "./Components/Dashboard";
+import Application from "./Components/Application";
+import OnlinePayment from "./Components/OnlinePayment";
+import Users from "./Components/Users";
+import ProviderAdmin from "./Components/ProviderAdmin";
+import DeviceModule from "./Components/DeviceModule";
+import AddFacility from "./Components/AddFacility";
+import Facilities from "./Components/Facilities";
+import Report from "./Components/Report";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <HeaderComponent />
+        <div className="container">
+          <Routes>
+            <Route exact path="/reports" element={<Report />} />
+            <Route exact path="/device" element={<DeviceModule />}></Route>
+            <Route
+              exact
+              path="/providerAdmin"
+              element={<ProviderAdmin />}
+            ></Route>
+            <Route exact path="/users" element={<Users />}></Route>
+            <Route
+              exact
+              path="/onlinePayment"
+              element={<OnlinePayment />}
+            ></Route>
+            <Route exact path="/application" element={<Application />}></Route>
+            <Route exact path="/" element={<Dashboard />}></Route>
+            <Route exact path="/facilities" element={<Facilities />}></Route>
+            <Route path="/addFacility" element={<AddFacility />}></Route>
+          </Routes>
+        </div>
+        <FooterComponent />
+      </Router>
     </div>
   );
 }
