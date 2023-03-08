@@ -26,13 +26,6 @@ public class HospitalService {
 	public Hospital updateHospital(Hospital countries) {
 		Hospital updatedHospital = null;
 		Hospital Saved = null;
-//		Optional<Hospital> findById = countryRepo.findByCountryId(countries.getClass());
-//		if (findById.isPresent()) {
-//			updatedHospital = new Hospital();
-////			updatedHospital.setCountryName(findById.get().getCountryName());
-////			updatedHospital.setRegionId(findById.get().getRegionId());
-//			Saved = countryRepo.save(updatedHospital);
-//		}
 		return Saved;
 	}
 
