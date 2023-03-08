@@ -17,8 +17,8 @@ public class UserService {
 
 	@Autowired
 	private UserRepo userRepo;
-	@Autowired
-	private RestTemplate restTemplate;
+//	@Autowired
+//	private RestTemplate restTemplate;
 
 	public List<User> getAllUsers() {
 		List<User> allcountries = userRepo.findAll();
@@ -26,12 +26,12 @@ public class UserService {
 	}
 
 	public User createUser(User countries) {
-		countries.setUserID(Utility.createRandomID());
+//		countries.setUserID(Utility.createRandomID());
 		// setting default role to user
 		countries.setRole(CommonConstants.USER);
 		// call facility service to make all facilities disabled
 //		http://localhost:8282/setDefaultFacility/{id}
-		restTemplate.getForEntity("http://localhost:8282/gett", Facility.class);
+//		restTemplate.getForEntity("http://localhost:8282/gett", Facility.class);
 		return userRepo.save(countries);
 	}
 
