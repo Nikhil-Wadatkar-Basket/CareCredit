@@ -19,7 +19,7 @@ public class HospitalService {
 	}
 
 	public Hospital createHospital(Hospital countries) {
-		countries.setHospId(Utility.createRandomID());
+//		countries.setHospId(Utility.createRandomID());
 		return hopsitalRepo.save(countries);
 	}
 
