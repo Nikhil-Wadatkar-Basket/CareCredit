@@ -33,6 +33,21 @@ class MyServices {
       { headers, mode: "no-cors" }
     );
   }
+
+  //users
+  createUser(req) {
+    return axios.post("http://localhost:8383/createUser", req);
+  }
+
+  getUsers() {
+    return axios.get("http://localhost:8383/getAll");
+  }
+  deleteUser(FacilityId) {
+    return axios.delete(
+      "http://192.168.1.2:8383/deleteByID" + "/" + FacilityId,
+      { headers, mode: "no-cors" }
+    );
+  }
 }
 
 export default new MyServices();

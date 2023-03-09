@@ -1,13 +1,13 @@
-import Container from "react-bootstrap/Container";
+
 
 const HeaderComponent = () => {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav className="navbar">
           <div>
             <a href="https://javaguides.net" className="navbar-brand">
-              Employee Management Application
+              <h1>Care Credit</h1>
             </a>
           </div>
         </nav>

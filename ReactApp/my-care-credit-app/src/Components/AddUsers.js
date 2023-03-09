@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MyService from "./MyService";
 import NavbarComponent from "./NavbarComponent";
 
-function Application() {
+function AddUsers() {
   const [userID, setuserID] = useState("");
   const [hospital_ID, sethospital_ID] = useState("");
   const [age, setage] = useState("");
@@ -12,6 +12,16 @@ function Application() {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [role, setrole] = useState("");
+
+  const makeEmpty = () => {
+    sethospital_ID("");
+    setage("");
+    setfullName("");
+    setemail("");
+    setcontact("");
+    setusername("");
+    setpassword("");
+  };
 
   const submitData = (e) => {
     e.preventDefault();
@@ -26,12 +36,17 @@ function Application() {
       password,
       role,
     };
+    console.log("====================================");
+    console.log(req);
+    console.log("====================================");
 
     MyService.createUser(req)
       .then((response) => {
         console.log("====================================");
         console.log(response.data);
+        makeEmpty();
         console.log("====================================");
+
         // history.push("/employees");
       })
       .catch((error) => {
@@ -45,7 +60,7 @@ function Application() {
       <div className="row">
         <div className="col-sm-3"></div>
         <div className="col-sm-6">
-          <h1 className="text-center"> Add Application</h1>
+          <h1 className="text-center"> Add User</h1>
           <form>
             <div className="form-group mb-2">
               <label className="form-label"> Hospital ID :</label>
@@ -136,4 +151,4 @@ function Application() {
     </div>
   );
 }
-export default Application;
+export default AddUsers;
