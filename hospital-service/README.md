@@ -1,0 +1,8 @@
+# CareCredit
+
+wadatkarnikhil22@gmail.com
+
+username: Nikhil-Wadatkar-Basket
+password: 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
+
+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
